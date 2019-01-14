@@ -12,7 +12,7 @@ $factory->define(App\Course::class, function (Faker $faker) {
         'name' => $name,
         'slug' => str_slug($name, '-'),
         'description' => $faker->paragraph,
-        'picture' => \Faker\Provider\Image::image(storage_path() . '/app/public/courses', 600,350,'business',false),
+        'picture' => \Faker\Provider\Image::image(storage_path() . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'courses', 200, 200,'tech', false),
         'status' => $status,
         'previous_approved' => $status !== \App\Course::PUBLISHED ? false : true,
         'previous_rejected' => $status === \App\Course::REJECTED ? true : false,
